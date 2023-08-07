@@ -18,16 +18,7 @@ public class TravelPackage {
     @Column(name = "package_name")
     String packageName;
 
-    @Column(name = "start_date")
-    LocalDate startDate;
-
-    @Column(name = "end_date")
-    LocalDate endDate;
-
-    @Column(name = "city_id")
-    Long cityId;
-
-    @OneToMany(mappedBy = "cityId")
-    List<City> cities;
+    @OneToMany(mappedBy = "travelPackageId")
+    List<TravelPackageCityManager> travelPackageCityManagers;
 
 }

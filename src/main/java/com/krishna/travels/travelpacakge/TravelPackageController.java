@@ -7,8 +7,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("api/v1/travelpackages")
+@RequestMapping("/api/v1/travelpackages")
 public class TravelPackageController {
 
     @Autowired
@@ -29,8 +31,16 @@ public class TravelPackageController {
         return travelPackageService.createTravelPackage(travelPackage);
     }
 
+    @PostMapping("/list")
+    public List<TravelPackage> createTravelPackages(@RequestBody List<TravelPackage> travelPackages){
+        return travelPackageService.createTravelPackages(travelPackages);
+    }
+
     @PutMapping("/{id}")
     public TravelPackage updateTravelPackage(Long id,@RequestBody TravelPackage travelPackage){
         return travelPackageService.updateTravelPackage(id,travelPackage);
     }
+
+
+
 }

@@ -10,6 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class TravelPackageService {
@@ -34,12 +36,16 @@ public class TravelPackageService {
     }
 
     public TravelPackage updateTravelPackage(Long id, TravelPackage travelPackage) {
-        if(travelPackage.getTravelPackageId()==null){
+        if (travelPackage.getTravelPackageId() == null) {
             throw new RuntimeException("Id cannot be null");
         }
-        if(id== travelPackage.getTravelPackageId()){
+        if (id == travelPackage.getTravelPackageId()) {
             return travelPackageRepository.save(travelPackage);
         }
         throw new RuntimeException("Id's are not same");
+    }
+
+    public List<TravelPackage> createTravelPackages(List<TravelPackage> travelPackages) {
+        return travelPackageRepository.saveAll(travelPackages);
     }
 }
