@@ -1,8 +1,13 @@
 package com.krishna.travels.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Data
 @Entity
 public class TravelPackageCityManager {
 
@@ -16,11 +21,5 @@ public class TravelPackageCityManager {
 
     @Column(name = "city_id")
     Long cityId;
-
-    @Column(name = "start_date")
-    LocalDate startDate;
-
-    @Column(name = "end_date")
-    LocalDate endDate;
 
 }

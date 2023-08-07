@@ -3,8 +3,9 @@ package com.krishna.travels.city;
 import com.krishna.travels.entity.City;
 import com.krishna.travels.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -22,8 +23,8 @@ public class CityService {
         return cityRepository.findById(id).orElse(null);
     }
 
-    public List<City> getCities() {
-        return cityRepository.findAll();
+    public Page<City> getCities(Pageable pageable) {
+        return cityRepository.findAll(pageable);
     }
 
     public void deleteCity(Long id) {

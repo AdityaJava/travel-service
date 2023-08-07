@@ -2,6 +2,8 @@ package com.krishna.travels.city;
 
 import com.krishna.travels.entity.City;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +16,8 @@ public class CityController {
     CityService cityService;
 
     @GetMapping
-    public List<City> getCities() {
-        return cityService.getCities();
+    public Page<City> getCities(Pageable pageable) {
+        return cityService.getCities(pageable);
     }
 
     @GetMapping("/{id}")

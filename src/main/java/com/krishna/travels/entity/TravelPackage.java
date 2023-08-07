@@ -21,4 +21,6 @@ public class TravelPackage {
     @OneToMany(mappedBy = "travelPackageId")
     List<TravelPackageCityManager> travelPackageCityManagers;
 
+    @OneToMany(mappedBy = "travelPackageId")
+    List<PackageEvent> packageEvents;
 }

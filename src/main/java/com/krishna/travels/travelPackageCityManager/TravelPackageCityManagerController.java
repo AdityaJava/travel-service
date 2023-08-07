@@ -2,6 +2,8 @@ package com.krishna.travels.travelPackageCityManager;
 
 import com.krishna.travels.entity.TravelPackageCityManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +16,8 @@ public class TravelPackageCityManagerController {
     TravelPackageCityManagerService travelPackageCityManagerService;
 
     @GetMapping
-    public List<TravelPackageCityManager> getTravelPackageCityManagers() {
-        return travelPackageCityManagerService.getTravelPackageCityManagers();
+    public Page<TravelPackageCityManager> getTravelPackageCityManagers(Pageable pageable) {
+        return travelPackageCityManagerService.getTravelPackageCityManagers(pageable);
     }
 
     @GetMapping("/{id}")
@@ -29,8 +31,8 @@ public class TravelPackageCityManagerController {
     }
 
     @PostMapping("/list")
-    public List<TravelPackageCityManager> createTravelPackageCityManagers(@RequestBody List<TravelPackageCityManager> cities) {
-        return travelPackageCityManagerService.createTravelPackageCityManagers(cities);
+    public List<TravelPackageCityManager> createTravelPackageCityManagers(@RequestBody List<TravelPackageCityManager> travelPackageCityManagers) {
+        return travelPackageCityManagerService.createTravelPackageCityManagers(travelPackageCityManagers);
     }
 
 

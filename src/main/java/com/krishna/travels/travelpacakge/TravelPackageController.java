@@ -41,6 +41,8 @@ public class TravelPackageController {
         return travelPackageService.updateTravelPackage(id,travelPackage);
     }
 
-
+//    public TravelPackage createEventOnTravelPackage{
+//        return null;
+//    }
 
 }
