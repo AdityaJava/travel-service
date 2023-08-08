@@ -1,15 +1,14 @@
 package com.krishna.travels.specifications;
 
-import com.krishna.travels.entity.TravelPackage;
 import lombok.Data;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class TravelPackageSpecificationCreator {
+public class SpecificationCreator<T> {
 
-    public Specification<TravelPackage> createSpecification(Filter filter){
+    public Specification<T> createSpecification(Filter filter){
 
         if (filter.getOperator() == null) {
             return null;

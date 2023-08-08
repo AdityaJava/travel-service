@@ -1,5 +1,6 @@
 package com.krishna.travels.travelpacakge;
 
+import com.krishna.travels.entity.PackageEvent;
 import com.krishna.travels.entity.TravelPackage;
 import com.krishna.travels.specifications.Filter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +42,7 @@ public class TravelPackageController {
         return travelPackageService.updateTravelPackage(id,travelPackage);
     }
 
-//    public TravelPackage createEventOnTravelPackage{
-//        return null;
-//    }
+
+
 
 }
